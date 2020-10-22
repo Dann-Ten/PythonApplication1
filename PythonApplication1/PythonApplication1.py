@@ -1,8 +1,6 @@
 import xlsxwriter
-import pandas
 import numpy
-import tkinter as tk
-from tkinter import filedialog
+import pandas
 from difflib import SequenceMatcher
 output=xlsxwriter.Workbook('output.xlsx')
 sheet1=output.add_worksheet()
@@ -22,7 +20,7 @@ for each,every in array1:
         field1=str(every)
         field2=str(two)
         perc=SequenceMatcher(None,field1,field2).ratio()
-        if(perc>=0.66): #Adjust this percentile for level of accuracy.
+        if(perc>=0.66): #Adjust this percentile for level of accuracy. 0.00-1.00
             col+=1
             sheet1.write(0,col,'FGC')
             sheet1.write(row,col,one)
